@@ -12,7 +12,7 @@ renamed as (
         territoryid,
         name,
         countryregioncode,
-        group,
+        --group,
         salesytd,
         saleslastyear,
         costytd,
