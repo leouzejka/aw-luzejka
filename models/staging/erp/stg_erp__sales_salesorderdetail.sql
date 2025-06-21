@@ -18,7 +18,7 @@ renamed as (
         , unitprice
         , unitpricediscount
         , rowguid
-        , modifieddat
+        , modifieddate
 
     from source
 
