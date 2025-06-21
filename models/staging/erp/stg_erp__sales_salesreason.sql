@@ -2,15 +2,16 @@ with
 
 source as (
 
-    select * from {{ source('erp', 'SALES_CURRENCY') }}
+    select * from {{ source('erp', 'sales_salesreason') }}
 
 ),
 
 renamed as (
 
     select
-        currencycode,
+        salesreasonid,
         name,
+        reasontype,
         modifieddate
 
     from source

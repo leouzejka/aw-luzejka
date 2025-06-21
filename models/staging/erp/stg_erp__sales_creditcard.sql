@@ -2,15 +2,18 @@ with
 
 source as (
 
-    select * from {{ source('erp', 'SALES_PERSONCREDITCARD') }}
+    select * from {{ source('erp', 'sales_creditcard') }}
 
 ),
 
 renamed as (
 
     select
-        businessentityid,
         creditcardid,
+        cardtype,
+        cardnumber,
+        expmonth,
+        expyear,
         modifieddate
 
     from source

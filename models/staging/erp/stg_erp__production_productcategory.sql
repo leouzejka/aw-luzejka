@@ -2,16 +2,16 @@ with
 
 source as (
 
-    select * from {{ source('erp', 'SALES_SALESREASON') }}
+    select * from {{ source('erp', 'production_productcategory') }}
 
 ),
 
 renamed as (
 
     select
-        salesreasonid,
+        productcategoryid,
         name,
-        reasontype,
+        rowguid,
         modifieddate
 
     from source
