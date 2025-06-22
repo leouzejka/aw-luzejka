@@ -9,32 +9,32 @@ source as (
 renamed as (
 
     select
-        productid,
-        name,
-        productnumber,
-        makeflag,
-        finishedgoodsflag,
-        color,
-        safetystocklevel,
-        reorderpoint,
-        standardcost,
-        listprice,
-        --size,
-        sizeunitmeasurecode,
-        weightunitmeasurecode,
-        weight,
-        daystomanufacture,
-        productline,
-        class,
-        style,
-        productsubcategoryid,
-        productmodelid,
-        sellstartdate,
-        sellenddate,
-        discontinueddate,
-        rowguid,
-        modifieddate
-
+          cast(productid as varchar) as product_id
+        , cast(name as varchar) as name
+        , cast(productnumber as varchar) as product_number
+        --safetystocklevel
+        --reorderpoint
+        --makeflag
+        --finishedgoodsflag
+        --color
+        --standardcost
+        --listprice
+        --size
+        --sizeunitmeasurecode
+        --weightunitmeasurecode
+        --weight
+        --daystomanufacture
+        --productline
+        --class
+        --style
+        --productsubcategoryid
+        --productmodelid
+        --sellstartdate
+        --sellenddate
+        --discontinueddate
+        --rowguid
+        --modifieddate
+,
     from source
 
 )

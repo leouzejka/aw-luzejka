@@ -9,15 +9,14 @@ source as (
 renamed as (
 
     select
-        stateprovinceid,
-        stateprovincecode,
-        countryregioncode,
-        isonlystateprovinceflag,
-        name,
-        territoryid,
-        rowguid,
-        modifieddate
-
+        cast(stateprovinceid as varchar) as state_province_id
+        , cast(stateprovincecode as varchar) as state_province_code
+        , cast(countryregioncode as varchar) as country_region_code
+        , cast(name as varchar) as name
+        , cast(territoryid as varchar) as territory_id
+        --modifieddate
+        --rowguid
+        --isonlystateprovinceflag
     from source
 
 )

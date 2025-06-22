@@ -9,16 +9,15 @@ source as (
 renamed as (
 
     select
-        addressid,
-        addressline1,
-        addressline2,
-        city,
-        stateprovinceid,
-        postalcode,
-        spatiallocation,
-        rowguid,
-        modifieddate
-
+          cast(addressid as varchar) as address_id
+        , cast(city as varchar) as city
+        , cast(stateprovinceid as varchar) as state_province_id 
+        , cast(postalcode as varchar) as postal_code 
+        , cast(modifieddate as date) as modified_date
+        --addressline1 
+        --addressline2  
+        --spatiallocation
+        --rowguid
     from source
 
 )

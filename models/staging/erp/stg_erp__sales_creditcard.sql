@@ -9,12 +9,12 @@ source as (
 renamed as (
 
     select
-        creditcardid,
-        cardtype,
-        cardnumber,
-        expmonth,
-        expyear,
-        modifieddate
+        cast(creditcardid as varchar) as creditcard_id
+        , cast(cardtype as varchar) as card_type
+        , cast(cardnumber as varchar) as card_number
+        , cast(expmonth as varchar) as exp_month
+        , cast(expyear as varchar) as exp_year 
+        --modifieddate
 
     from source
 
