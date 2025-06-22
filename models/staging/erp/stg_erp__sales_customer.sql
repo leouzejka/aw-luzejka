@@ -9,12 +9,12 @@ source as (
 renamed as (
 
     select
-        customerid,
-        personid,
-        storeid,
-        territoryid,
-        rowguid,
-        modifieddate
+          cast(customerid as varchar) as customer_id 
+        , cast(storeid as varchar) as store_id 
+        , cast(territoryid as varchar) as territory_id
+        --personid
+        --rowguid
+        --modifieddat 
 
     from source
 

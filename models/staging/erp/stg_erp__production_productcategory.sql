@@ -9,10 +9,10 @@ source as (
 renamed as (
 
     select
-        productcategoryid,
-        name,
-        rowguid,
-        modifieddate
+          cast(productcategoryid as int) as product_category_id
+        , cast(name as varchar) as name
+        --rowguid
+        --modifieddate
 
     from source
 

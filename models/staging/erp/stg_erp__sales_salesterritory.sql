@@ -9,17 +9,17 @@ source as (
 renamed as (
 
     select
-        territoryid,
-        name,
-        countryregioncode,
-        --group,
-        salesytd,
-        saleslastyear,
-        costytd,
-        costlastyear,
-        rowguid,
-        modifieddate
-
+         cast(territoryid as varchar) as territory_id
+        , cast(name as varchar) as name
+        , cast(countryregioncode as varchar) as country_region_code
+        , cast(salesytd as decimal(19, 2)) as sales_ytd 
+        , cast(saleslastyear as decimal(19, 2)) as sales_last_year
+        , cast(modifieddate as date) as modified_date 
+        --group 
+        --costytd
+        --costlastyear
+        --rowguid
+        
     from source
 
 )
