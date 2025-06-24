@@ -10,7 +10,7 @@ renamed as (
 
     select
           cast(productid as varchar) as product_id
-        , cast(name as varchar) as name
+        , cast(name as varchar) as product_name
         , cast(productnumber as varchar) as product_number
         --safetystocklevel
         --reorderpoint
