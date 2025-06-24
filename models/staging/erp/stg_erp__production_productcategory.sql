@@ -10,7 +10,7 @@ renamed as (
 
     select
           cast(productcategoryid as int) as product_category_id
-        , cast(name as varchar) as name
+        , cast(name as varchar) as product_category_name
         --rowguid
         --modifieddate
 
