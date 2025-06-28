@@ -9,7 +9,7 @@ source as (
 renamed as (
 
     select
-        , cast(businessentityid as varchar) as business_entity_id
+         cast(businessentityid as varchar) as business_entity_id
         --rowguid
         --modifieddate
 

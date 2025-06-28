@@ -34,7 +34,7 @@ renamed as (
         --discontinueddate
         --rowguid
         --modifieddate
-,
+
     from source
 
 )
