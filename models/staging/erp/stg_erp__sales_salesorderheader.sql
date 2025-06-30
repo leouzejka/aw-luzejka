@@ -11,7 +11,7 @@ renamed as (
     select
         cast(salesorderid as varchar) as order_id
         , cast(customerid as varchar) as customer_id        
-        , cast(salespersonid as varchar) as sales_person_id
+        , cast(salespersonid as varchar) as person_id
         , cast(territoryid as varchar) as territory_id
         , cast(creditcardid as varchar) as creditcard_id
         , cast(subtotal as decimal(19, 2)) as subtotal

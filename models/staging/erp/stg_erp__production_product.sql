@@ -12,6 +12,9 @@ renamed as (
           cast(productid as varchar) as product_id
         , cast(name as varchar) as product_name
         , cast(productnumber as varchar) as product_number
+        , cast(productsubcategoryid as varchar) as product_sub_category
+        , cast(productmodelid as varchar) as product_model_id
+        , cast(discontinueddate as date) as discontinued_date
         --safetystocklevel
         --reorderpoint
         --makeflag
@@ -27,11 +30,8 @@ renamed as (
         --productline
         --class
         --style
-        --productsubcategoryid
-        --productmodelid
         --sellstartdate
         --sellenddate
-        --discontinueddate
         --rowguid
         --modifieddate
 
