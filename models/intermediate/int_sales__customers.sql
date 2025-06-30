@@ -53,21 +53,23 @@ with
 
         select 
           person.business_entity_id
-        , person.first_name || ' ' || person.last_name as complete_name
+        , customers.person_id
         , customers.customer_id
         , customers.territory_id
+        , person.first_name || ' ' || person.last_name as complete_name    
+        , territory.territory_name
         , person_address.city
         , stateprovince.state_province_name
-        , territory.territory_name
+        
       
         
         
         from customers
-        inner join person on customers.person_id = person.business_entity_id
-        inner join person_businessentity_address on person.business_entity_id = person_businessentity_address.business_entity_id
-        inner join person_address on person_businessentity_address.address_id = person_address.address_id
-        inner join stateprovince on person_address.state_province_id = stateprovince.state_province_id
-        inner join territory on stateprovince.territory_id = territory.territory_id
+        left join person on customers.person_id = person.business_entity_id
+        left join person_businessentity_address on person.business_entity_id = person_businessentity_address.business_entity_id
+        join person_address on person_businessentity_address.address_id = person_address.address_id
+        join stateprovince on person_address.state_province_id = stateprovince.state_province_id
+        join territory on stateprovince.territory_id = territory.territory_id
     )
 
     select * from joined

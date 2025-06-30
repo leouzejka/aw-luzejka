@@ -9,12 +9,13 @@ source as (
 renamed as (
 
     select
-        cast(salesreasonid as varchar) as sales_person_id
+        cast(salesreasonid as varchar) as sales_reason_id
         , cast(name as varchar) as name
-        --reasontype
+        , cast(reasontype as varchar) as reason_type
         --modifieddate
 
     from source
+    
 
 )
 
