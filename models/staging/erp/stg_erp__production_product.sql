@@ -14,13 +14,13 @@ renamed as (
         , cast(productnumber as varchar) as product_number
         , cast(productsubcategoryid as varchar) as product_sub_category
         , cast(productmodelid as varchar) as product_model_id
+        , cast(standardcost as decimal(19, 2)) as standard_cost
         , cast(discontinueddate as date) as discontinued_date
         --safetystocklevel
         --reorderpoint
         --makeflag
         --finishedgoodsflag
         --color
-        --standardcost
         --listprice
         --size
         --sizeunitmeasurecode
