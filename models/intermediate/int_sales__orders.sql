@@ -43,10 +43,10 @@ with
 	        , orders.freight
 	        , orders.total_due
         -- aditional metrics
-, (order_details.order_quantity * order_details.unit_price) as line_gross_revenue  -- Receita bruta por linha
-, (order_details.order_quantity * order_details.unit_price * order_details.discount) as line_discount_amount -- Valor do desconto por linha
-, (order_details.order_quantity * order_details.unit_price * (1 - order_details.discount)) as line_net_revenue     -- Receita líquida por linha
-, (order_details.order_quantity * order_details.unit_price * (1 - order_details.discount)) - (products.standard_cost * order_details.order_quantity) as line_gross_profit    -- Lucro bruto por linha
+, cast((order_details.order_quantity * order_details.unit_price) as decimal(19, 2)) as line_gross_revenue  -- Receita bruta por linha
+, cast((order_details.order_quantity * order_details.unit_price * order_details.discount) as decimal(19, 2)) as line_discount_amount -- Valor do desconto por linha
+, cast((order_details.order_quantity * order_details.unit_price * (1 - order_details.discount) as decimal(19, 2))) as line_net_revenue     -- Receita líquida por linha
+, cast((order_details.order_quantity * order_details.unit_price * (1 - order_details.discount)) - (products.standard_cost * order_details.order_quantity) as decimal(19, 2)) as line_gross_profit    -- Lucro bruto por linha
         
         from order_details
         left join orders on order_details.order_id = orders.order_id
